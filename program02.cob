@@ -45,23 +45,25 @@
       *--- This is how to handle with command line arguments
       *--- For example we display any input in range of 10 characters
            ACCEPT CMDLINE FROM COMMAND-LINE
-           DISPLAY CMDLINE 
+      *---     DISPLAY CMDLINE 
       *--- We dsipaly what ever that comes into the program
 
-           DISPLAY "SINISA ABRAMOVIC PROGRAM-ID: PROGRAM02"
+      *---     DISPLAY "SINISA ABRAMOVIC PROGRAM-ID: PROGRAM02"
 
            MOVE "More Stuff" TO SampleData 
            MOVE "123" TO SampleData 
            MOVE 123 to SampleData 
-           DISPLAY SampleData 
-           DISPLAY PayCheck 
+      *---     DISPLAY SampleData 
+      *---     DISPLAY PayCheck 
 
            MOVE "123Sinisa Abramovic    06041982" TO Customer 
-           DISPLAY "ID : " CustomerID
-           DISPLAY "Customer : " CustomerName 
-           DISPLAY "Birthdate : " BirthDay "/" BirthMonth "/" BirthYear
+      *---     DISPLAY "ID : " CustomerID
+      *---     DISPLAY "Customer : " CustomerName 
+      *---     DISPLAY "Birthdate : " BirthDay "/" BirthMonth "/" BirthYear
 
       *--- Lets display as JSON
-           DISPLAY '{bd:"' BirthDate  '" un:"' CustomerName '"}'
+           DISPLAY 'CMD PASS:' CMDLINE 
+                   ' {bd:"' BirthDate
+                   '" un:"' CustomerName '"}'       
 
            STOP RUN.
