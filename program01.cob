@@ -40,7 +40,7 @@
 
               
        PROCEDURE DIVISION.
-           DISPLAY "COBOL PROGRAM-ID: PROGRAM01"
+           DISPLAY "SINISA ABRAMOVIC PROGRAM-ID: PROGRAM01"
            DISPLAY "HELLO " UserName
            
            MOVE ZERO to UserName 
