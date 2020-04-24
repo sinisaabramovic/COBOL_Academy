@@ -21,6 +21,7 @@
        DATA DIVISION. 
        FILE SECTION. 
        WORKING-STORAGE SECTION. 
+       01 CMDLINE            PIC x(10).
        01 SampleData         PIC X(10)   VALUE "Stuff".
        01 JustLetter         PIC AAA     VALUE "ABC".
        01 JustNumbers        PIC 9(4)    VALUE 1234.
@@ -41,6 +42,12 @@
        01 Answer             PIC   S99V99 VALUE  0.
 
        PROCEDURE DIVISION.
+      *--- This is how to handle with command line arguments
+      *--- For example we display any input in range of 10 characters
+           ACCEPT CMDLINE FROM COMMAND-LINE
+           DISPLAY CMDLINE 
+      *--- We dsipaly what ever that comes into the program
+
            DISPLAY "SINISA ABRAMOVIC PROGRAM-ID: PROGRAM02"
 
            MOVE "More Stuff" TO SampleData 
@@ -53,5 +60,8 @@
            DISPLAY "ID : " CustomerID
            DISPLAY "Customer : " CustomerName 
            DISPLAY "Birthdate : " BirthDay "/" BirthMonth "/" BirthYear
-           
+
+      *--- Lets display as JSON
+           DISPLAY '{bd:"' BirthDate  '" un:"' CustomerName '"}'
+
            STOP RUN.
