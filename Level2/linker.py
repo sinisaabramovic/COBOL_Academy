@@ -12,17 +12,25 @@
 import os
 import sys
 from ctypes import *
+from ctypes import cdll, byref, create_string_buffer
 
 
 # NOTE: fn_name is copied from the output of nm (see INSTRUCTIONS.md)
 if sys.platform == "darwin":
     lib_ext = "dylib"
-    fn_name = "GETSUM"
+    fn_name = "GETSUMX"
 else:
     lib_ext = "so"
-    fn_name = "GETSUM"
+    fn_name = "GETSUMX"
 
 
 
 myLib = cdll.LoadLibrary(fn_name + "." + lib_ext)
-print(vars(myLib))
+#print("Definition of the library: ")
+#print(vars(myLib))
+#print("EOF Definition")
+
+#print("Test function Call")
+#test_result = myLib.GETSUMX.argtypes
+print(myLib.GETSUMX)
+#print("EOF Test Function Call")

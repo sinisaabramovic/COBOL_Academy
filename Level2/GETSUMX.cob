@@ -1,5 +1,5 @@
       *****************************************************************
-      * Program name:    GETSUM                               
+      * Program name:    GETSUMX                               
       * Original author: SINISA ABRAMOVIC                                
       *
       * Maintenence Log                                              
@@ -9,7 +9,7 @@
       *                                                               
       *****************************************************************
        IDENTIFICATION DIVISION.
-       PROGRAM-ID.  GETSUM.
+       PROGRAM-ID.  GETSUMX.
        AUTHOR. SINISA ABRAMOVIC.
        INSTALLATION. COBOL DEVELOPMENT CENTER. 
        DATE-WRITTEN. 25/04/2020. 
@@ -23,5 +23,6 @@
        01 LSum1 PIC 99.   
 
        PROCEDURE DIVISION USING LNum1, LNum2, LSum1.
+           DISPLAY "ENTER 1: " LNum1 " 2:" LNum2 " 3:" LSum1
            COMPUTE LSum1 = LNum1 + LNum2.
            EXIT PROGRAM.
