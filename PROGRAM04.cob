@@ -51,6 +51,52 @@
               DISPLAY "You can't vote"
            END-IF.
 
+           IF Age LESS THAN 5 THEN 
+              DISPLAY "Stay at home"          
+           END-IF 
+
+           IF Age > 5 AND Age < 18 THEN 
+              COMPUTE Grade = Age - 5
+              DISPLAY "Go to Grade " Grade 
+           END-IF 
+
+           IF Age >= 18 THEN 
+              DISPLAY "Go to Collage"
+           END-IF 
+
+           IF Score IS PassingScore THEN 
+              DISPLAY "You Passed"
+           ELSE
+              DISPLAY "You Failed"
+           END-IF 
+
+           IF Score IS NOT NUMERIC THEN 
+              DISPLAY "Not Number"
+           ELSE 
+              DISPLAY "Number"
+           END-IF 
+           
+           IF Age > 18 THEN 
+              SET CanVote TO TRUE         
+           ELSE 
+              SET CantVote TO TRUE  
+           END-IF 
+           DISPLAY "Vote " CanVoteFlag 
+           
+           DISPLAY "Enter Single Number or Character to exit :"
+                    WITH NO ADVANCING 
+           ACCEPT TestNumber 
+           PERFORM UNTIL NOT ANumber
+              EVALUATE TRUE
+                 WHEN IsPrime DISPLAY "Prime"
+                 WHEN isOdd  DISPLAY "Odd"
+                 WHEN isEven  DISPLAY "Even"
+                 WHEN LessTahn5  DISPLAY "Prime"
+                 WHEN OTHER  DISPLAY "Default Action"
+               END-EVALUATE
+               ACCEPT TestNumber 
+            END-PERFORM
+           
            STOP RUN. 
 
 
